@@ -4,10 +4,16 @@ module.exports = {
     "./public/index.html",
     "./node_modules/tw-elements/dist/js/**/*.js",
   ],
+  purge: [
+    "./src/**/*.{js,jsx,ts,tsx}",
+    "./public/index.html",
+    "./node_modules/tw-elements/dist/js/**/*.js",
+  ],
   // content: ["./src/**/*.{js,jsx,ts,tsx}"],
   future: {
     removeDeprecatedGapUtilities: true,
   },
+  mode: "jit",
   theme: {
     backgroundImage: {
       "home-desktop": "url('./assets/images/home/background-home-desktop.jpg')",
