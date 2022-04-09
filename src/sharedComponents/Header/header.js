@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Logo from "../../assets/images/shared/logo.svg";
 import styles from "./header.module.css";
 import Link from "./Link";
@@ -7,6 +7,11 @@ import Cancel from "../../assets/images/shared/icon-close.svg";
 
 export default function Header() {
   const [menu, setMenu] = useState(false);
+
+  useEffect(() => {
+    if (menu) document.body.classList.add("fixed");
+    else document.body.classList.remove("fixed");
+  }, [menu]);
 
   return (
     <nav
@@ -30,45 +35,46 @@ export default function Header() {
         <img src={Menu} alt="" className="w-6 h-6" />
       </span>
       <div
-        onBlur={() => setMenu(false)}
-        className={`fixed landscape:min-h-screen transition-all duration-300 ${
-          menu ? "right-0" : "-right-[75vw]"
-        } w-[75vw] top-0 h-screen z-50 sm:flex flex-col px-4 ${
-          styles.header
-        } `}>
-        <div className="pt-8 pb-12">
-          <img
-            onClick={() => setMenu(false)}
-            src={Cancel}
-            className="ml-auto w-4 h-4"
-            alt=""
-          />
-        </div>
-        <div className="space-y-4">
-          <Link
-            customStyles={"border-none !py-2 !justify-start"}
-            count="0"
-            name="Home"
-            path="/"
-          />
-          <Link
-            customStyles={"border-none !py-2 !justify-start"}
-            count="1"
-            name="Destination"
-            path="/destination"
-          />
-          <Link
-            customStyles={"border-none !py-2 !justify-start"}
-            count="2"
-            name="Crew"
-            path="/crew"
-          />
-          <Link
-            customStyles={"border-none !py-2 !justify-start"}
-            count="3"
-            name="Technology"
-            path="/technology"
-          />
+        className={`fixed landscape:min-h-screen h-full transition-all duration-300 ${
+          menu ? "right-0" : "-right-[100vw]"
+        } w-[100vw] h-full top-0 z-50 sm:flex flex-row justify-end bg-transparent  `}>
+        <div
+          className={`sm:flex overflow-auto pb-4 h-full flex-col w-3/4 px-4 ${styles.header}`}
+          onBlur={() => setMenu(false)}>
+          <div className="pt-8 pb-12">
+            <img
+              onClick={() => setMenu(false)}
+              src={Cancel}
+              className="ml-auto w-4 h-4"
+              alt=""
+            />
+          </div>
+          <div className="space-y-4">
+            <Link
+              customStyles={"border-none !py-2 !justify-start"}
+              count="0"
+              name="Home"
+              path="/"
+            />
+            <Link
+              customStyles={"border-none !py-2 !justify-start"}
+              count="1"
+              name="Destination"
+              path="/destination"
+            />
+            <Link
+              customStyles={"border-none !py-2 !justify-start"}
+              count="2"
+              name="Crew"
+              path="/crew"
+            />
+            <Link
+              customStyles={"border-none !py-2 !justify-start"}
+              count="3"
+              name="Technology"
+              path="/technology"
+            />
+          </div>
         </div>
       </div>
     </nav>

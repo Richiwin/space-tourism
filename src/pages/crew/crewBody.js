@@ -65,14 +65,13 @@ export default function CrewBody() {
             Meet your crew
           </h4>
         </div>
-        <motion.div
-          variants={variants}
-          exit={"exit"}
-          initial={"hide"}
-          animate={"show"}
-          key={+index}
-          className="w-full h-full relative flex justify-end md:justify-center md:mx-auto sm:border-b-[1px] sm:border-gray-400">
-          <img
+        <div className="w-full h-full min-h-[300px] relative flex items-end justify-end md:justify-center md:mx-auto sm:border-b-[1px] sm:border-gray-400">
+          <motion.img
+            variants={variants}
+            exit={"exit"}
+            initial={"hide"}
+            animate={"show"}
+            key={+index}
             src={require(`../../assets/images/crew/image-${data.crew[
               +index
             ].name
@@ -82,7 +81,7 @@ export default function CrewBody() {
             className="max-w-full sm:min-h-[200px] sm:mt-4 sm:relative absolute max-h-full sm:max-h-[250px] bottom-0"
             alt=""
           />
-        </motion.div>
+        </div>
       </div>
     </>
   );
