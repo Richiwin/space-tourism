@@ -1,5 +1,4 @@
-import { useState } from "react";
-import Rocket from "../../assets/images/technology/image-launch-vehicle-landscape.jpg";
+import { AnimatePresence } from "framer-motion";
 import Header from "../../sharedComponents/Header";
 import { Outlet } from "react-router-dom";
 
@@ -18,7 +17,9 @@ export default function Tech() {
           </h4>
         </div>
         <div className="flex flex-row justify-between flex-1 md:flex-col-reverse md:w-full">
-          <Outlet />
+          <AnimatePresence exitBeforeEnter>
+            <Outlet />
+          </AnimatePresence>
         </div>
       </div>
     </div>

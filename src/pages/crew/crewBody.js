@@ -1,6 +1,8 @@
 import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
 import data from "../../data.json";
+import { variants } from "../../sharedComponents/variants";
 
 export default function CrewBody() {
   const { index } = useParams();
@@ -8,7 +10,7 @@ export default function CrewBody() {
 
   return (
     <>
-      <div className="flex flex-col justify-between py-16 md:py-8 sm:!py-0 md:pb-0 md:justify-start w-2/5 md:w-full h-full md:h-[unset]">
+      <div className="flex flex-col sm:mt-auto justify-between py-16 md:py-8 sm:!py-0 md:pb-0 md:justify-start w-2/5 md:w-full h-full md:h-[unset]">
         <div className="flex flex-row space-x-8 md:space-x-4 sm:hidden">
           <h4 className="text-gray-500 font-bold md:!text-xl md:tracking-widest sm:!text-lg font-Barlow ">
             02
@@ -63,7 +65,13 @@ export default function CrewBody() {
             Meet your crew
           </h4>
         </div>
-        <div className="w-full h-full relative sm:landscape:mt-[40%] sm:mt-8 flex justify-end md:justify-center md:mx-auto sm:border-b-[1px] sm:border-gray-400">
+        <motion.div
+          variants={variants}
+          exit={"exit"}
+          initial={"hide"}
+          animate={"show"}
+          key={+index}
+          className="w-full h-full relative flex justify-end md:justify-center md:mx-auto sm:border-b-[1px] sm:border-gray-400">
           <img
             src={require(`../../assets/images/crew/image-${data.crew[
               +index
@@ -71,10 +79,10 @@ export default function CrewBody() {
               .split(" ")
               .join("-")
               .toLowerCase()}.webp`)}
-            className="max-w-full sm:min-h-[200px] max-h-full absolute bottom-0"
+            className="max-w-full sm:min-h-[200px] sm:mt-4 sm:relative absolute max-h-full sm:max-h-[250px] bottom-0"
             alt=""
           />
-        </div>
+        </motion.div>
       </div>
     </>
   );

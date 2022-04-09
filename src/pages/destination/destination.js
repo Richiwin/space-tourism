@@ -1,5 +1,6 @@
 import styles from "./destination.module.css";
 import Header from "../../sharedComponents/Header";
+import { AnimatePresence } from "framer-motion";
 import { Outlet } from "react-router-dom";
 
 export default function Destination() {
@@ -16,7 +17,9 @@ export default function Destination() {
             Pick your destination
           </h4>
         </div>
-        <Outlet />
+        <AnimatePresence exitBeforeEnter>
+          <Outlet />
+        </AnimatePresence>
       </div>
     </div>
   );

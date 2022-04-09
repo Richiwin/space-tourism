@@ -1,5 +1,6 @@
 import { useNavigate, useParams } from "react-router-dom";
-import Rocket from "../../assets/images/technology/image-spaceport-landscape.jpg";
+import { motion } from "framer-motion";
+import { variants } from "../../sharedComponents/variants";
 import data from "../../data.json";
 import { imageImport } from "./imageImport";
 
@@ -51,7 +52,12 @@ export default function TechBody() {
           </p>
         </div>
       </div>
-      <div
+      <motion.div
+        variants={variants}
+        exit={"exit"}
+        initial={"hide"}
+        animate={"show"}
+        key={+index}
         className={`w-2/5 pb-16 h-full min-h-[250px] sm:h-[300px] relative md:w-full sm:w-full`}>
         <picture className="md:object-fill absolute w-full h-full">
           <source
@@ -68,7 +74,7 @@ export default function TechBody() {
             className={`w-full h-full absolute md:object-fill `}
           />{" "}
         </picture>
-      </div>
+      </motion.div>
     </>
   );
 }

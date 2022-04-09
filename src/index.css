@@ -2947,6 +2947,9 @@ input[type="number"] {
 .max-h-full {
   max-height: 100%;
 }
+.max-h-\[250px\] {
+  max-height: 250px;
+}
 .min-h-screen {
   min-height: 100vh;
 }
@@ -3142,6 +3145,18 @@ input[type="number"] {
   --tw-bg-opacity: 1;
   background-color: rgb(239 68 68 / var(--tw-bg-opacity));
 }
+.bg-red-200 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(254 202 202 / var(--tw-bg-opacity));
+}
+.bg-slate-100 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(241 245 249 / var(--tw-bg-opacity));
+}
+.bg-red-300 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(252 165 165 / var(--tw-bg-opacity));
+}
 .bg-crew-desktop {
   background-image: url('./assets/images/crew/background-crew-desktop.jpg');
 }
@@ -3311,6 +3326,13 @@ input[type="number"] {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
+.transition {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
 .duration-150 {
   transition-duration: 150ms;
 }
@@ -3369,6 +3391,9 @@ input[type="number"] {
   background-color: rgb(226 232 240 / 0.25);
 }
 @media (max-width: 767px) {
+  .sm\:relative {
+    position: relative;
+  }
   .sm\:mx-auto {
     margin-left: auto;
     margin-right: auto;
@@ -3387,6 +3412,18 @@ input[type="number"] {
   }
   .sm\:mt-0 {
     margin-top: 0px;
+  }
+  .sm\:mt-\[40\%\] {
+    margin-top: 40%;
+  }
+  .sm\:mb-\[40\%\] {
+    margin-bottom: 40%;
+  }
+  .sm\:mt-auto {
+    margin-top: auto;
+  }
+  .sm\:mb-auto {
+    margin-bottom: auto;
   }
   .sm\:flex {
     display: flex;
@@ -3412,8 +3449,17 @@ input[type="number"] {
   .sm\:h-\[300px\] {
     height: 300px;
   }
+  .sm\:h-\[200px\] {
+    height: 200px;
+  }
+  .sm\:max-h-\[250px\] {
+    max-height: 250px;
+  }
   .sm\:min-h-\[200px\] {
     min-height: 200px;
+  }
+  .sm\:min-h-screen {
+    min-height: 100vh;
   }
   .sm\:\!w-full {
     width: 100% !important;
@@ -3432,6 +3478,9 @@ input[type="number"] {
   }
   .sm\:\!w-8 {
     width: 2rem !important;
+  }
+  .sm\:flex-1 {
+    flex: 1 1 0%;
   }
   .sm\:flex-col {
     flex-direction: column;
@@ -3464,6 +3513,10 @@ input[type="number"] {
   .sm\:border-gray-400 {
     --tw-border-opacity: 1;
     border-color: rgb(156 163 175 / var(--tw-border-opacity));
+  }
+  .sm\:bg-red-500 {
+    --tw-bg-opacity: 1;
+    background-color: rgb(239 68 68 / var(--tw-bg-opacity));
   }
   .sm\:bg-crew-mobile {
     background-image: url('./assets/images/crew/background-crew-mobile.jpg');
@@ -3757,6 +3810,9 @@ input[type="number"] {
   }
 }
 @media (orientation: portrait) {
+  .portrait\:mt-\[40\%\] {
+    margin-top: 40%;
+  }
   .portrait\:h-screen {
     height: 100vh;
   }
@@ -3768,6 +3824,33 @@ input[type="number"] {
   }
   .portrait\:bg-p-launch-vehicle {
     background-image: url('./assets/images/technology/image-launch-vehicle-portrait.jpg');
+  }
+}
+@media (max-width: 767px) {
+  @media (orientation: portrait) {
+    .sm\:portrait\:mb-\[40\%\] {
+      margin-bottom: 40%;
+    }
+  }
+  @media (orientation: portrait) {
+    .sm\:portrait\:mt-\[40\%\] {
+      margin-top: 40%;
+    }
+  }
+  @media (orientation: portrait) {
+    .sm\:portrait\:mt-auto {
+      margin-top: auto;
+    }
+  }
+  @media (orientation: portrait) {
+    .sm\:portrait\:mt-\[80\%\] {
+      margin-top: 80%;
+    }
+  }
+  @media (orientation: portrait) {
+    .sm\:portrait\:mb-\[80\%\] {
+      margin-bottom: 80%;
+    }
   }
 }
 @media (orientation: landscape) {
@@ -3804,6 +3887,11 @@ input[type="number"] {
   @media (orientation: landscape) {
     .sm\:landscape\:mt-\[40\%\] {
       margin-top: 40%;
+    }
+  }
+  @media (orientation: landscape) {
+    .sm\:landscape\:mb-\[40\%\] {
+      margin-bottom: 40%;
     }
   }
 }

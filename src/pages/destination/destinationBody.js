@@ -1,27 +1,29 @@
 import Link from "../../sharedComponents/Header/Link";
 import { useParams } from "react-router-dom";
+import { motion, AnimatePresence } from "framer-motion";
+
+import { variants } from "../../sharedComponents/variants";
 import data from "../../data.json";
-import Moon from "../../assets/images/destination/image-europa.webp";
 
 export default function DestinationBody() {
   const { index } = useParams();
 
-  console.log(index);
-  console.log(typeof index);
   return (
     <div className="flex flex-row md:flex-col md:w-full px-4 mt-16 space-x-12 md:space-x-0 justify-between">
-      <div className="w-1/3 md:w-1/2 sm:!w-full md:mx-auto">
+      <motion.div
+        key={+index}
+        variants={variants}
+        animate={"show"}
+        initial={"initial"}
+        exit="exit"
+        className="w-1/3 md:w-1/2 sm:!w-full md:mx-auto">
         <img
           src={require(`../../assets/images/destination/image-${data.destinations[
             +index
           ].name.toLowerCase()}.webp`)}
           alt=""
         />
-        {/* <img
-          src={require("../../assets/images/destination/image-europa.webp")}
-          alt=""
-        /> */}
-      </div>
+      </motion.div>
       <div className="md:mb-8 w-1/2 md:w-full md:flex md:justify-center md:flex-col md:mt-8 ">
         <div className="flex flex-row gap-x-8 md:flex md:justify-center">
           {data.destinations.map((el, index) => (

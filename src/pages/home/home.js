@@ -23,7 +23,7 @@ export default function Home() {
         </div>
         <div className="md:mx-auto md:mt-auto landscape:mt-12">
           <Link
-            to="#"
+            to="/destination"
             className="sm:w-[10rem] sm:h-[10rem] md:after:h-0 md:after:w-0 after:content-[''] after:absolute after:w-[20rem] after:h-[20rem] after:rounded-full after:hover:-z-10 after:hover:bg-slate-200/25 after:bg-transparent after:transition-colors duration-150 z-20 relative uppercase flex flex-1 items-center justify-center w-60 h-60 bg-white rounded-full">
             <span className="text-3xl sm:text-lg">EXPLORE</span>
           </Link>
