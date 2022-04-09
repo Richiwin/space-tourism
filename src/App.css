@@ -1,38 +1,72 @@
-.App {
-  text-align: center;
-}
+@import "./styles.css";
+@tailwind base;
+@tailwind components;
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+@layer base {
+  h1 {
+    @apply text-6xl font-Bellefair uppercase;
+  }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+  h2 {
+    @apply text-5xl font-Bellefair uppercase;
+  }
+
+  h3 {
+    @apply text-4xl font-Bellefair uppercase;
+  }
+  h4 {
+    @apply text-3xl font-Bellefair uppercase;
+  }
+
+  h5 {
+    @apply text-2xl font-Barlow uppercase;
+  }
+
+  h6 {
+    @apply text-xl font-Barlow uppercase;
+  }
+
+  p{
+    @apply font-Barlow tracking-wider leading-8 ;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  @apply font-Bellefair;
 }
 
-.App-link {
-  color: #61dafb;
+@font-face {
+  font-family: "Bellefair";
+  src: url("./assets/fonts/Bellefair.ttf");
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+@font-face {
+  font-family: "Barlow";
+  src: url("./assets/fonts/Barlow.ttf");
+  font-weight: normal
 }
+
+@font-face {
+  font-family: "Barlow";
+  src: url("./assets/fonts/Barlow_Bold.ttf");
+  font-weight: bold
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  /* display: none; <- Crashes Chrome on hover */
+  -webkit-appearance: none;
+  margin: 0;
+  /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+input[type="number"] {
+  -moz-appearance: textfield; /* Firefox */
+}
+
+@tailwind utilities;
