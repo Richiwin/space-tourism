@@ -28,6 +28,19 @@ module.exports = {
         "url('./assets/images/technology/background-technology-tablet.jpg')",
       "tech-mobile":
         "url('./assets/images/technology/background-technology-mobile.jpg')",
+      "p-launch-vehicle":
+        "url('./assets/images/technology/image-launch-vehicle-portrait.jpg')",
+
+      "l-launch-vehicle":
+        "url('./assets/images/technology/image-launch-vehicle-landscape.jpg')",
+      "p-spaceport":
+        "url('./assets/images/technology/image-spaceport-portrait.jpg')",
+      "l-spaceport":
+        "url('./assets/images/technology/image-spaceport-landscape.jpg')",
+      "p-capsule":
+        "url('./assets/images/technology/image-space-capsule-portrait.jpg')",
+      "l-capsule":
+        "url('./assets/images/technology/image-space-capsule-landscape.jpg')",
     },
     extend: {
       screens: {

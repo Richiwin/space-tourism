@@ -2941,8 +2941,11 @@ input[type="number"] {
 .min-h-\[200px\] {
   min-height: 200px;
 }
-.min-h-full {
-  min-height: 100%;
+.min-h-\[300px\] {
+  min-height: 300px;
+}
+.min-h-\[250px\] {
+  min-height: 250px;
 }
 .w-full {
   width: 100%;
@@ -3102,6 +3105,14 @@ input[type="number"] {
 .bg-transparent {
   background-color: transparent;
 }
+.bg-red-400 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(248 113 113 / var(--tw-bg-opacity));
+}
+.bg-red-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(239 68 68 / var(--tw-bg-opacity));
+}
 .bg-crew-desktop {
   background-image: url('./assets/images/crew/background-crew-desktop.jpg');
 }
@@ -3114,8 +3125,17 @@ input[type="number"] {
 .bg-tech-desktop {
   background-image: url('./assets/images/technology/background-technology-desktop.jpg');
 }
+.bg-p-launch-vehicle {
+  background-image: url('./assets/images/technology/image-launch-vehicle-portrait.jpg');
+}
 .bg-cover {
   background-size: cover;
+}
+.bg-no-repeat {
+  background-repeat: no-repeat;
+}
+.object-fill {
+  object-fit: fill;
 }
 .px-\[120px\] {
   padding-left: 120px;
@@ -3223,6 +3243,10 @@ input[type="number"] {
   --tw-text-opacity: 1;
   color: rgb(208 214 249 / var(--tw-text-opacity));
 }
+.text-black {
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity));
+}
 .opacity-20 {
   opacity: 0.2;
 }
@@ -3236,8 +3260,16 @@ input[type="number"] {
 .filter {
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
+.transition-all {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
 .duration-150 {
   transition-duration: 150ms;
+}
+.duration-200 {
+  transition-duration: 200ms;
 }
 .after\:absolute::after {
   content: var(--tw-content);
@@ -3275,6 +3307,9 @@ input[type="number"] {
 .hover\:border-gray-400:hover {
   --tw-border-opacity: 1;
   border-color: rgb(156 163 175 / var(--tw-border-opacity));
+}
+.hover\:bg-slate-500\/40:hover {
+  background-color: rgb(100 116 139 / 0.4);
 }
 .after\:hover\:-z-10:hover::after {
   content: var(--tw-content);
@@ -3321,6 +3356,12 @@ input[type="number"] {
   }
   .sm\:\!h-8 {
     height: 2rem !important;
+  }
+  .sm\:h-\[250px\] {
+    height: 250px;
+  }
+  .sm\:h-\[300px\] {
+    height: 300px;
   }
   .sm\:\!w-full {
     width: 100% !important;
@@ -3656,6 +3697,15 @@ input[type="number"] {
   .portrait\:h-screen {
     height: 100vh;
   }
+  .portrait\:bg-p-capsule {
+    background-image: url('./assets/images/technology/image-space-capsule-portrait.jpg');
+  }
+  .portrait\:bg-p-spaceport {
+    background-image: url('./assets/images/technology/image-spaceport-portrait.jpg');
+  }
+  .portrait\:bg-p-launch-vehicle {
+    background-image: url('./assets/images/technology/image-launch-vehicle-portrait.jpg');
+  }
 }
 @media (orientation: landscape) {
   .landscape\:mt-12 {
@@ -3663,5 +3713,14 @@ input[type="number"] {
   }
   .landscape\:min-h-screen {
     min-height: 100vh;
+  }
+  .landscape\:bg-l-capsule {
+    background-image: url('./assets/images/technology/image-space-capsule-landscape.jpg');
+  }
+  .landscape\:bg-l-spaceport {
+    background-image: url('./assets/images/technology/image-spaceport-landscape.jpg');
+  }
+  .landscape\:bg-l-launch-vehicle {
+    background-image: url('./assets/images/technology/image-launch-vehicle-landscape.jpg');
   }
 }

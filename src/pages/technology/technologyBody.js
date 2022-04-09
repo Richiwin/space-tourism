@@ -1,6 +1,7 @@
 import { useNavigate, useParams } from "react-router-dom";
 import Rocket from "../../assets/images/technology/image-spaceport-landscape.jpg";
 import data from "../../data.json";
+import { imageImport } from "./imageImport";
 
 export default function TechBody() {
   const { index } = useParams();
@@ -12,17 +13,29 @@ export default function TechBody() {
         <ul className="flex flex-col space-y-8 md:space-y-0 md:space-x-4 md:flex-row md:items-center md:mx-auto md:mt-8">
           <li
             onClick={() => navigate("/technology/0")}
-            className="cursor-pointer bg-white w-16 h-16 md:w-12 md:h-12 sm:!h-10 sm:text-xs sm:!w-10 md:text-base border-[1px] border-transparent rounded-full flex justify-center items-center font-Bellefair text-2xl">
+            className={`cursor-pointer ${
+              +index === 0
+                ? "bg-white border-transparent text-black"
+                : "hover:bg-slate-500/40 text-white bg-transparent border-gray-700"
+            } w-16 h-16 md:w-12 md:h-12 transition-all duration-200 sm:!h-10 sm:text-xs sm:!w-10 md:text-base border-[1px]  rounded-full flex justify-center items-center font-Bellefair text-2xl`}>
             1
           </li>
           <li
             onClick={() => navigate("/technology/1")}
-            className="cursor-pointer bg-transparent text-white w-16 h-16 md:w-12 md:h-12 sm:!h-10 sm:text-xs sm:!w-10 md:text-base border-[1px] border-gray-700 rounded-full flex justify-center items-center font-Bellefair text-2xl">
+            className={`cursor-pointer ${
+              +index === 1
+                ? "bg-white border-transparent text-black"
+                : "hover:bg-slate-500/40 text-white bg-transparent border-gray-700"
+            } w-16 h-16 md:w-12 md:h-12 transition-all duration-200 sm:!h-10 sm:text-xs sm:!w-10 md:text-base border-[1px] rounded-full flex justify-center items-center font-Bellefair text-2xl`}>
             2
           </li>
           <li
             onClick={() => navigate("/technology/2")}
-            className="cursor-pointer bg-transparent text-white w-16 h-16 md:w-12 md:h-12 sm:!h-10 sm:text-xs sm:!w-10 md:text-base border-[1px] border-gray-700 rounded-full flex justify-center items-center font-Bellefair text-2xl">
+            className={`cursor-pointer ${
+              +index === 2
+                ? "bg-white border-transparent text-black"
+                : "hover:bg-slate-500/40 text-white bg-transparent border-gray-700"
+            } w-16 h-16 md:w-12 md:h-12 transition-all duration-200 sm:!h-10 sm:text-xs sm:!w-10 md:text-base border-[1px] rounded-full flex justify-center items-center font-Bellefair text-2xl`}>
             3
           </li>
         </ul>
@@ -38,12 +51,23 @@ export default function TechBody() {
           </p>
         </div>
       </div>
-      <div className="w-2/5 pb-16 h-full min-h-[200px] relative md:w-full">
-        <img
-          src={Rocket}
-          alt=""
-          className="w-full h-full absolute md:object-fill"
-        />
+      <div
+        className={`w-2/5 pb-16 h-full min-h-[250px] sm:h-[300px] relative md:w-full sm:w-full`}>
+        <picture className="md:object-fill absolute w-full h-full">
+          <source
+            srcSet={imageImport[data.technology[+index].name].portrait}
+            media="all and (orientation: portrait)"
+          />
+          <source
+            srcSet={imageImport[data.technology[+index].name].landscape}
+            media="all and (orientation: landscape)"
+          />
+          <img
+            alt=""
+            src={imageImport[data.technology[+index].name].landscape}
+            className={`w-full h-full absolute md:object-fill `}
+          />{" "}
+        </picture>
       </div>
     </>
   );

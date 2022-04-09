@@ -32,16 +32,24 @@ export default function CrewBody() {
           <div className="flex flex-row space-x-4 md:justify-center md:mt-4 sm:!mt-8">
             <span
               onClick={() => navigate("/crew/0")}
-              className="w-4 h-4 md:w-2 md:h-2 bg-white rounded-full"></span>
+              className={`w-4 h-4 md:w-2 md:h-2 transition-all duration-200 rounded-full ${
+                +index === 0 ? "bg-white" : "bg-gray-500 hover:bg-slate-500/40"
+              }`}></span>
             <span
               onClick={() => navigate("/crew/1")}
-              className="w-4 h-4 md:w-2 md:h-2 bg-gray-500 rounded-full"></span>
+              className={`w-4 h-4 md:w-2 md:h-2  rounded-full ${
+                +index === 1 ? "bg-white" : "bg-gray-500 hover:bg-slate-500/40"
+              }`}></span>
             <span
               onClick={() => navigate("/crew/2")}
-              className="w-4 h-4 md:w-2 md:h-2 bg-gray-500 rounded-full"></span>
+              className={`w-4 h-4 md:w-2 md:h-2 rounded-full ${
+                +index === 2 ? "bg-white" : "bg-gray-500 hover:bg-slate-500/40"
+              }`}></span>
             <span
               onClick={() => navigate("/crew/3")}
-              className="w-4 h-4 md:w-2 md:h-2 bg-gray-500 rounded-full"></span>
+              className={`w-4 h-4 md:w-2 md:h-2 rounded-full ${
+                +index === 3 ? "bg-white" : "bg-gray-500 hover:bg-slate-500/40"
+              }`}></span>
           </div>
         </div>
       </div>
